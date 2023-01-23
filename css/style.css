@@ -24,6 +24,18 @@ body {
   line-height: 40px;
 }
 
+.btn-default {
+  background-color: beige;
+  margin: 0px 8px;
+}
+
+.btn-danger {
+  margin: 0px 8px;
+}
+
+#myForm {
+  background-color: rgb(173, 169, 169);
+}
 /* Custom page footer */
 .footer {
   padding-top: 19px;
