@@ -24,6 +24,15 @@ body {
   line-height: 40px;
 }
 
+.form-control {
+  margin-left: 15px;
+  margin-right: -15px;
+}
+
+.btn-primary {
+  margin-bottom: 10px;
+}
+
 .btn-default {
   background-color: beige;
   margin: 0px 8px;
@@ -34,7 +43,7 @@ body {
 }
 
 #myForm {
-  background-color: rgb(173, 169, 169);
+  background-color: rgb(224, 219, 219);
 }
 /* Custom page footer */
 .footer {
