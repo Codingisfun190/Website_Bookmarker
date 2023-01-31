@@ -42,6 +42,14 @@ body {
   margin: 0px 8px;
 }
 
+#bookmarksResults {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  margin-top: 3rem;
+  /* text-align: center; */
+}
+
 #myForm {
   background-color: rgb(224, 219, 219);
   padding: 10px;
