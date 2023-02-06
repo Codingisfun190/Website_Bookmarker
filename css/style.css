@@ -43,11 +43,11 @@ body {
 }
 
 #bookmarksResults {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
-  margin-top: 3rem;
-  /* text-align: center; */
+  margin-top: 3rem; */
+  text-align: center;
 }
 
 #myForm {
