@@ -36,6 +36,11 @@ body {
 .btn-default {
   background-color: beige;
   margin: 0px 8px;
+  border-style: solid;
+}
+
+.btn-default:hover {
+  background-color: aqua;
 }
 
 .btn-danger {
