@@ -42,12 +42,14 @@ body {
   margin: 0px 8px;
 }
 
-#bookmarksResults {
-  /* display: grid;
-  grid-template-columns: repeat(2, 1fr);
+h3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
-  margin-top: 3rem; */
-  text-align: center;
+  margin-top: 3rem;
+  /* text-align: center; */
+  /* display: flex;
+  justify-content: center; */
 }
 
 #myForm {
