@@ -35,8 +35,11 @@ body {
 
 .btn-default {
   background-color: beige;
-  margin: 0px 8px;
   border-style: solid;
+}
+
+.btn:hover {
+  font-size: 1.2rem;
 }
 
 .btn-default:hover {
@@ -44,7 +47,7 @@ body {
 }
 
 .btn-danger {
-  margin: 0px 8px;
+  
 }
 
 h3 {
