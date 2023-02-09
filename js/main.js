@@ -1,6 +1,24 @@
 // Listen for form submit
 document.getElementById('myForm').addEventListener('submit', saveBookmark)
 
+// Select the button for dark mode
+const btn = document.querySelector('.btn.toggle')
+
+// Check for dark mode preference
+const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
+
+// Get the user's theme preference from local storage
+const currentTheme = localStorage.getItem('theme')
+// If user's preference is dark
+if (currentTheme === 'dark') {
+  // Toggle dark mode
+  document.body.classList.toggle('dark-mode')
+  // If user's preference is light
+} else if (currentTheme === 'light') {
+  // Toggle light mode
+  document.body.classList.toggle('light-mode')
+}
+
 // Save bookmark
 function saveBookmark(e) {
   // Get form values
@@ -124,3 +142,5 @@ function validateForm(siteName, siteUrl) {
 
   return true
 }
+
+// Add dark mode to website

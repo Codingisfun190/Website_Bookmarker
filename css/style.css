@@ -16,12 +16,15 @@ body {
 .header {
   padding-bottom: 20px;
   border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  justify-content: space-between;
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
   margin-top: 0;
   margin-bottom: 0;
   line-height: 40px;
+  
 }
 
 /* .form-control {
@@ -38,16 +41,8 @@ body {
   border-style: solid;
 }
 
-.btn:hover {
-  font-size: 1.2rem;
-}
-
 .btn-default:hover {
   background-color: aqua;
-}
-
-.btn-danger {
-  
 }
 
 #bookmarksResults {
@@ -58,6 +53,13 @@ body {
   /* text-align: center; */
   /* display: flex;
   justify-content: center; */
+}
+
+@media screen and (min-width: 600px) {
+  #bookmarksResults .btn {
+    padding: 10px;
+    font-size: 20px;
+  }
 }
 
 #myForm {
