@@ -96,15 +96,14 @@ function fetchBookmarks() {
     //   ">Delete</a>` +
     //   `</h3>` +
     //   `</div>`
-  }
 
-  // cleaned up lines 86+
-  bookmarksResults.innerHTML += `
-    <h3>${name}</h3>
-    <a class="btn btn-default" target="_blank" href="${url}">Visit</a>
-    <a onclick="deleteBookmark('${url}')" class="btn btn-danger" href="#
-    ">Delete</a>
-  `
+    // cleaned up lines 86+
+    bookmarksResults.innerHTML += `
+      <h3>${name}</h3>
+      <a class="btn btn-default" target="_blank" href="${url}">Visit</a>
+      <a onclick="deleteBookmark('${url}')" class="btn btn-danger" href="#">Delete</a>
+    `
+  }
 }
 
 // Validate form
