@@ -22,13 +22,14 @@ if (currentTheme === 'dark') {
 // Listen for click on dark mode button
 btn.addEventListener('click', function () {
   // If user's OS setting is dark and matches dark mode
-  if (prefersDarkMode.matches) {
+  if (prefersDarkMode.matches && innerHTML == 'Dark Mode') {
     // Toggle light mode
     document.body.classList.toggle('light-mode')
     // Toggle dark mode if light mode is on
     var theme = document.body.classList.contains('light-mode')
       ? 'light'
       : 'dark'
+    innerHTML = 'Light Mode'
   } else {
     // Same thing but for dark mode
     document.body.classList.toggle('dark-mode')
@@ -37,6 +38,18 @@ btn.addEventListener('click', function () {
   // Save current preference
   localStorage.setItem('theme', theme)
 })
+
+// Change button dark mode to light mode when clicked and vice versa
+// document
+//   .getElementsByClassName('btn-toggle')
+//   .addEventListener(click, function () {
+//     const dmb = document.getElementsById('dmb')
+
+//     if (dmb.innerHTML == 'Dark Mode') {
+//       dmb.innerHTML = 'Light Mode'
+//     } else {
+//     }
+//   })
 
 // Save bookmark
 function saveBookmark(e) {
