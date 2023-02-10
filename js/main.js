@@ -2,7 +2,7 @@
 document.getElementById('myForm').addEventListener('submit', saveBookmark)
 
 // Select the button for dark mode
-const btn = document.querySelector('.btn.toggle')
+const btn = document.querySelector('.btn-toggle')
 
 // Check for dark mode preference
 const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
@@ -18,6 +18,25 @@ if (currentTheme === 'dark') {
   // Toggle light mode
   document.body.classList.toggle('light-mode')
 }
+
+// Listen for click on dark mode button
+btn.addEventListener('click', function () {
+  // If user's OS setting is dark and matches dark mode
+  if (prefersDarkMode.matches) {
+    // Toggle light mode
+    document.body.classList.toggle('light-mode')
+    // Toggle dark mode if light mode is on
+    var theme = document.body.classList.contains('light-mode')
+      ? 'light'
+      : 'dark'
+  } else {
+    // Same thing but for dark mode
+    document.body.classList.toggle('dark-mode')
+    var theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light'
+  }
+  // Save current preference
+  localStorage.setItem('theme', theme)
+})
 
 // Save bookmark
 function saveBookmark(e) {

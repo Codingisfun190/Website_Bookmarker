@@ -4,6 +4,24 @@ body {
   padding-bottom: 20px;
 }
 
+body.dark-mode {
+  color: #eee;
+  background-color: #121212;;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  body {
+    --text-color: #eee;
+    --bkg-color: #121212;
+  }
+  body.light-theme {
+    --text-color: #222;
+    --bkg-color: #fff;
+  }
+}
+
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -38,7 +56,6 @@ body {
 
 .btn-default {
   background-color: beige;
-  border-style: solid;
 }
 
 .btn-default:hover {
