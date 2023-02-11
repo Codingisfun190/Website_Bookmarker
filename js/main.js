@@ -2,7 +2,7 @@
 document.getElementById('myForm').addEventListener('submit', saveBookmark)
 
 // Select the button for dark mode
-const btn = document.querySelector('.btn-toggle')
+const btn = document.getElementById('dmb')
 
 // Check for dark mode preference
 const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
@@ -10,30 +10,47 @@ const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
 // Get the user's theme preference from local storage
 const currentTheme = localStorage.getItem('theme')
 // If user's preference is dark
-if (currentTheme === 'dark') {
+if (currentTheme == 'dark') {
   // Toggle dark mode
   document.body.classList.toggle('dark-mode')
+  btn.innerText = 'Dark Mode'
   // If user's preference is light
-} else if (currentTheme === 'light') {
+} else if (currentTheme == 'light') {
   // Toggle light mode
   document.body.classList.toggle('light-mode')
+  btn.innerText = 'Light Mode'
+} else {
+  btn.innerText = theme
 }
+
+// function toggle() {
+//   if (document.getElementById('dmb').checked) {
+//     prefersDarkMode()
+//   } else {
+//     !prefersDarkMode()
+//   }
+// }
 
 // Listen for click on dark mode button
 btn.addEventListener('click', function () {
   // If user's OS setting is dark and matches dark mode
-  if (prefersDarkMode.matches && innerText == 'Dark Mode') {
+  if (prefersDarkMode.matches) {
     // Toggle light mode
     document.body.classList.toggle('light-mode')
     // Toggle dark mode if light mode is on
     var theme = document.body.classList.contains('light-mode')
       ? 'light'
       : 'dark'
-    innerText = 'Light Mode'
-  } else {
+    btn.innerText = 'Light Mode'
+    console.log(currentTheme)
+  } else if (!prefersDarkMode.matches) {
     // Same thing but for dark mode
     document.body.classList.toggle('dark-mode')
     var theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light'
+    btn.innerText = 'Dark Mode'
+  } else {
+    document.body.classList.toggle('dark-mode')
+    btn.innerText = 'Light Mode'
   }
   // Save current preference
   localStorage.setItem('theme', theme)
