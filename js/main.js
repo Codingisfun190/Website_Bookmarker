@@ -20,7 +20,7 @@ if (currentTheme == 'dark') {
   document.body.classList.toggle('light-mode')
   btn.innerText = 'Light Mode'
 } else {
-  btn = btn.innerText
+  btn.innerText = 'Light Mode'
 }
 
 // function toggle() {
@@ -51,7 +51,7 @@ btn.addEventListener('click', function () {
     var theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light'
     btn.innerText = 'Dark Mode'
   } else {
-    document.body.classList.toggle('')
+    // document.body.classList.toggle('theme')
     btn.innerText = 'Light Mode'
   }
   // Save current preference
