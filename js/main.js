@@ -5,10 +5,10 @@ document.getElementById('myForm').addEventListener('submit', saveBookmark)
 const btn = document.getElementById('dmb')
 
 // Check for dark mode preference
-const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
+let prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
 
 // Get the user's theme preference from local storage
-const currentTheme = localStorage.getItem('theme')
+let currentTheme = localStorage.getItem('theme')
 // If user's preference is dark
 if (currentTheme == 'dark') {
   // Toggle dark mode
@@ -20,7 +20,7 @@ if (currentTheme == 'dark') {
   document.body.classList.toggle('light-mode')
   btn.innerText = 'Light Mode'
 } else {
-  btn.innerText = theme
+  btn = btn.innerText
 }
 
 // function toggle() {
@@ -33,6 +33,8 @@ if (currentTheme == 'dark') {
 
 // Listen for click on dark mode button
 btn.addEventListener('click', function () {
+  let currentTheme = localStorage.getItem('theme')
+  let prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
   // If user's OS setting is dark and matches dark mode
   if (prefersDarkMode.matches) {
     // Toggle light mode
@@ -49,7 +51,7 @@ btn.addEventListener('click', function () {
     var theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light'
     btn.innerText = 'Dark Mode'
   } else {
-    document.body.classList.toggle('dark-mode')
+    document.body.classList.toggle('')
     btn.innerText = 'Light Mode'
   }
   // Save current preference
