@@ -15,7 +15,7 @@ if (currentTheme == 'dark') {
   document.body.classList.toggle('dark-mode')
   btn.innerText = 'Dark Mode'
   // If user's preference is light
-} else if (currentTheme == 'light') {
+} else if (!currentTheme == 'dark') {
   // Toggle light mode
   document.body.classList.toggle('light-mode')
   btn.innerText = 'Light Mode'
@@ -52,10 +52,11 @@ btn.addEventListener('click', function () {
     var theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light'
     btn.innerText = 'Dark Mode'
   } else {
-    document.body.classList.toggle('light-mode')
-    var theme = document.body.classList.contains('light-mode')
-      ? 'light'
-      : 'dark'
+    localStorage.getItem('theme')
+    // document.body.classList.toggle('light-mode')
+    // var theme = document.body.classList.contains('light-mode')
+    //   ? 'light'
+    //   : 'dark'
     btn.innerText = 'Light Mode'
   }
   // Save current preference
