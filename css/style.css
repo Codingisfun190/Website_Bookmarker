@@ -9,8 +9,12 @@ body.dark-mode {
   background-color: #121212;;
 }
 
-@media (prefers-color-scheme: dark) {
-  /* defaults to dark theme */
+body.dark-mode #myForm label {
+  color: #121212;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  defaults to dark theme
   body {
     --text-color: #eee;
     --bkg-color: #121212;
@@ -19,7 +23,7 @@ body.dark-mode {
     --text-color: #222;
     --bkg-color: #fff;
   }
-}
+} */
 
 /* .smooth-transition {
   transition: background-color 300ms;
@@ -74,6 +78,10 @@ body.dark-mode {
   /* text-align: center; */
   /* display: flex;
   justify-content: center; */
+}
+
+.btn-toggle {
+  border-radius: 5px;
 }
 
 @media screen and (min-width: 600px) {

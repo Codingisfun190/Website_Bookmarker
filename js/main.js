@@ -4,76 +4,36 @@ document.getElementById('myForm').addEventListener('submit', saveBookmark)
 // Select the button for dark mode
 const btn = document.getElementById('dmb')
 
-// Check for dark mode preference
-let prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
+// // Check for dark mode preference
+// let prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
 
 // Get the user's theme preference from local storage
 let currentTheme = localStorage.getItem('theme')
 // If user's preference is dark
-if (currentTheme == 'dark') {
-  // Toggle dark mode
-  document.body.classList.toggle('dark-mode')
-  btn.innerText = 'Dark Mode'
-  // If user's preference is light
-} else if (!currentTheme == 'dark') {
-  // Toggle light mode
-  document.body.classList.toggle('light-mode')
-  btn.innerText = 'Light Mode'
-} else {
-  document.body.classList.toggle('light-mode')
-  btn.innerText = 'Light Mode'
-}
-
-// function toggle() {
-//   if (document.getElementById('dmb').checked) {
-//     prefersDarkMode()
-//   } else {
-//     !prefersDarkMode()
-//   }
-// }
+toggleDark()
 
 // Listen for click on dark mode button
-btn.addEventListener('click', function () {
-  let currentTheme = localStorage.getItem('theme')
-  let prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
-  // If user's OS setting is dark and matches dark mode
-  if (prefersDarkMode.matches) {
-    // Toggle light mode
-    document.body.classList.toggle('light-mode')
-    // Toggle dark mode if light mode is on
-    var theme = document.body.classList.contains('light-mode')
-      ? 'light'
-      : 'dark'
-    btn.innerText = 'Light Mode'
-    console.log(currentTheme)
-  } else if (!prefersDarkMode.matches) {
-    // Same thing but for dark mode
-    document.body.classList.toggle('dark-mode')
-    var theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light'
-    btn.innerText = 'Dark Mode'
-  } else {
-    localStorage.getItem('theme')
-    // document.body.classList.toggle('light-mode')
-    // var theme = document.body.classList.contains('light-mode')
-    //   ? 'light'
-    //   : 'dark'
-    btn.innerText = 'Light Mode'
-  }
+btn.addEventListener('click', () => {
+  toggleDark()
+
   // Save current preference
-  localStorage.setItem('theme', theme)
+  localStorage.setItem('theme', currentTheme)
 })
 
-// Change button dark mode to light mode when clicked and vice versa
-// document
-//   .getElementsByClassName('btn-toggle')
-//   .addEventListener(click, function () {
-//     const dmb = document.getElementsById('dmb')
-
-//     if (dmb.innerHTML == 'Dark Mode') {
-//       dmb.innerHTML = 'Light Mode'
-//     } else {
-//     }
-//   })
+function toggleDark() {
+  // Toggle dark mode
+  document.body.classList.toggle('dark-mode')
+  currentTheme = document.body.classList.contains('dark-mode')
+    ? 'dark'
+    : 'light'
+  if (currentTheme == 'dark') {
+    btn.innerText = 'Light Mode'
+    btn.title = 'Switch to Light Mode'
+  } else {
+    btn.innerText = 'Dark Mode'
+    btn.title = 'Switch to Dark Mode'
+  }
+}
 
 // Save bookmark
 function saveBookmark(e) {
@@ -89,14 +49,6 @@ function saveBookmark(e) {
     name: siteName,
     url: siteUrl
   }
-
-  /*
-  // Local storage test
-  localStorage.setItem('test', 'Hello World')
-  console.log(localStorage.getItem('test'))
-  localStorage.removeItem('test')
-  console.log(localStorage.getItem('test'))
-  */
 
   // Test if bookmarks is null
   if (localStorage.getItem('bookmarks') === null) {
